@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class IntroScreen extends StatefulWidget {
- const IntroScreen({super.key});
+  const IntroScreen({super.key});
 
   @override
   State<IntroScreen> createState() => _IntoScreenState();
@@ -45,6 +45,17 @@ class _IntoScreenState extends State<IntroScreen> {
     }
   }
 
+  text(String title, Color color, double fontSize, FontWeight fontWeight,
+      FontStyle fontStyle) {
+    return Text(title,
+        style: TextStyle(
+          color: color,
+          fontSize: fontSize,
+          fontWeight: fontWeight,
+          fontStyle: fontStyle,
+        ));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,13 +94,9 @@ class _IntoScreenState extends State<IntroScreen> {
                                 ),
                                 width: 50,
                                 height: 35,
-                                child: const Center(
-                                  child: Text("SKIP",
-                                      style: TextStyle(
-                                          color: Colors.lightBlueAccent,
-                                          fontSize: 12,
-                                          fontStyle: FontStyle.normal,
-                                          fontWeight: FontWeight.w500)),
+                                child: Center(
+                                  child: text("SKIP", Colors.lightBlueAccent,
+                                      12.0, FontWeight.w500, FontStyle.normal),
                                 )),
                           ),
                       ])
@@ -108,25 +115,22 @@ class _IntoScreenState extends State<IntroScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Text(
+                    text(
                       data[index]['titletext']!,
-                      style: const TextStyle(
-                          fontSize: 30,
-                          fontStyle: FontStyle.normal,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black),
-                      textAlign: TextAlign.center,
+                      Colors.black,
+                      30,
+                      FontWeight.w500,
+                      FontStyle.normal,
                     ),
                     const SizedBox(
                       height: 20,
                     ),
-                    Text(
+                    text(
                       data[index]['description']!,
-                      style: const TextStyle(
-                          fontSize: 15,
-                          fontStyle: FontStyle.normal,
-                          fontWeight: FontWeight.w500,
-                          color: Colors.black26),
+                      Colors.black26,
+                      15,
+                      FontWeight.w500,
+                      FontStyle.normal,
                     ),
                     const SizedBox(
                       height: 20,
@@ -142,13 +146,14 @@ class _IntoScreenState extends State<IntroScreen> {
                           borderRadius: BorderRadius.circular(20),
                           color: Colors.lightBlueAccent,
                         ),
-                        child: const Center(
-                          child: Text("NEXT",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 25,
-                                  fontStyle: FontStyle.normal,
-                                  fontWeight: FontWeight.w500)),
+                        child: Center(
+                          child: text(
+                            "NEXT",
+                            Colors.white,
+                            25,
+                            FontWeight.w500,
+                            FontStyle.normal,
+                          ),
                         ),
                       ),
                     )
