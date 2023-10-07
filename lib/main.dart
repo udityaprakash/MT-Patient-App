@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:meditransparency/utils/screens/splash_screen.dart';
 
-import 'utils/screens/intro_screen.dart';
+import 'utils/screens/auth_screens/sign_in_screen.dart';
+import 'utils/screens/auth_screens/sign_up_screen.dart';
+
+
 
 void main() {
   runApp(const MyApp());

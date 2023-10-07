@@ -1,7 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
+
 import 'package:meditransparency/utils/screens/intro_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -27,8 +28,8 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Image(image: 
+    return Scaffold(body: Center(child:
     
-    NetworkImage("https://cdn.firstcry.com/education/2022/12/12101916/Flower-Names-In-English-For-Kids.jpg"))));
+    SvgPicture.asset("assets/images/splashlogo.svg")));
   }
 }

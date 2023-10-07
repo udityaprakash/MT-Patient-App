@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:meditransparency/utils/screens/auth_screens/sign_in_screen.dart';
+
+import '../widgets/reusable_text.dart';
 
 class IntroScreen extends StatefulWidget {
   const IntroScreen({super.key});
@@ -15,17 +18,20 @@ class _IntoScreenState extends State<IntroScreen> {
     {
       "titletext": "Find the best doctors\n near you!",
       "description":
-          "With the help of our intelligent algorithms,\n now locate the best doctors around your\n vicinity at total ease "
+          "With the help of our intelligent algorithms,\n now locate the best doctors around your\n vicinity at total ease ",
+      "image": "0.svg"
     },
     {
       "titletext": "Schedule appointments\n with expert doctors",
       "description":
-          "Find experienced specialist doctors with a\n good ratings and reviews and book you\n appointments hassle free."
+          "Find experienced specialist doctors with a\n good ratings and reviews and book you\n appointments hassle free.",
+      "image": "1.svg"
     },
     {
       "titletext": "Find Help from our AI\n Assistant!",
       "description":
-          "An AI assistant integrated into our app\n revolutionizes the patient experience by\n providing real-time support."
+          "An AI assistant integrated into our app\n revolutionizes the patient experience by\n providing real-time support.",
+      "image": "2.svg"
     },
   ];
 
@@ -38,22 +44,11 @@ class _IntoScreenState extends State<IntroScreen> {
   }
 
   updatedecrementindex() {
-    if (index <= 2) {
+    if (index > 0) {
       setState(() {
         index--;
       });
     }
-  }
-
-  text(String title, Color color, double fontSize, FontWeight fontWeight,
-      FontStyle fontStyle) {
-    return Text(title,
-        style: TextStyle(
-          color: color,
-          fontSize: fontSize,
-          fontWeight: fontWeight,
-          fontStyle: fontStyle,
-        ));
   }
 
   @override
@@ -99,7 +94,12 @@ class _IntoScreenState extends State<IntroScreen> {
                                       12.0, FontWeight.w500, FontStyle.normal),
                                 )),
                           ),
-                      ])
+                      ]),
+                  Container(
+                    height: MediaQuery.of(context).size.height / 3,
+                    child: SvgPicture.asset(
+                        "assets/images/${data[index]['image']}"),
+                  )
                 ],
               ),
             ),
@@ -137,7 +137,14 @@ class _IntoScreenState extends State<IntroScreen> {
                     ),
                     InkWell(
                       onTap: () {
-                        updateincrementindex();
+                        if (index == 2) {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const SignInScreen()));
+                        } else {
+                          updateincrementindex();
+                        }
                       },
                       child: Container(
                         width: 265,
