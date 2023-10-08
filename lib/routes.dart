@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meditransparency/utils/screens/auth_screens/sign_in_screen.dart';
 import 'package:meditransparency/utils/screens/intro_screen.dart';
 import 'package:meditransparency/utils/screens/splash_screen.dart';
 import 'package:meditransparency/utils/widgets/no_internet.dart';
@@ -19,9 +20,9 @@ class CustomRoute {
           return SplashScreen();
         case "featurescreen":
           return IntroScreen();
-        // case "home":
-        //   // ignore: prefer_const_constructors
-        //   return home();
+        case "signinscreen":
+          // ignore: prefer_const_constructors
+          return SignInScreen();
       }
 
       // ignore: prefer_const_constructors

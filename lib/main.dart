@@ -29,18 +29,10 @@ class MyApp extends StatelessWidget {
     
         onGenerateRoute: CustomRoute.allRoutes,
         theme:
-        // ThemeData.light(),
          ThemeData(
           scaffoldBackgroundColor: ui.backgroundclr,
           textTheme: Typography().white,
         ),
-        // darkTheme: ThemeData.dark(
-        //   // useMaterial3: true,
-
-        // ),
-        // home: const Scaffold(
-        //   body: Splashscreen(),
-        // ),
       ),
     );
   }
