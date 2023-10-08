@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:meditransparency/utils/screens/auth_screens/sign_in_screen.dart';
-
+import 'package:meditransparency/data/constants/colors.dart';
 import '../widgets/reusable_text.dart';
 
 class IntroScreen extends StatefulWidget {
@@ -54,7 +54,7 @@ class _IntoScreenState extends State<IntroScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.lightBlueAccent,
+        backgroundColor: ui.backgroundclr,
         body: Column(
           children: [
             Container(
@@ -90,7 +90,7 @@ class _IntoScreenState extends State<IntroScreen> {
                                 width: 50,
                                 height: 35,
                                 child: Center(
-                                  child: text("SKIP", Colors.lightBlueAccent,
+                                  child: text(" SKIP ", Colors.lightBlueAccent,
                                       12.0, FontWeight.w500, FontStyle.normal),
                                 )),
                           ),
@@ -138,10 +138,7 @@ class _IntoScreenState extends State<IntroScreen> {
                     InkWell(
                       onTap: () {
                         if (index == 2) {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const SignInScreen()));
+                          Navigator.pushReplacementNamed(context, 'signinscreen');
                         } else {
                           updateincrementindex();
                         }
@@ -167,6 +164,7 @@ class _IntoScreenState extends State<IntroScreen> {
                   ]),
             )
           ],
-        ));
+        )
+        );
   }
 }
