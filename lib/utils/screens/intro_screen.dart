@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:meditransparency/data/constants/styles.dart';
 import 'package:meditransparency/utils/screens/auth_screens/sign_in_screen.dart';
 import 'package:meditransparency/data/constants/colors.dart';
+import 'package:meditransparency/utils/widgets/bottomdrawer.dart';
+import 'package:meditransparency/utils/widgets/button.dart';
 import '../widgets/reusable_text.dart';
 
 class IntroScreen extends StatefulWidget {
@@ -16,21 +19,21 @@ class _IntoScreenState extends State<IntroScreen> {
 
   var data = [
     {
-      "titletext": "Find the best doctors\n near you!",
+      "titletext": "Find the best doctors near you!",
       "description":
-          "With the help of our intelligent algorithms,\n now locate the best doctors around your\n vicinity at total ease ",
+          "With the help of our intelligent algorithms, now locate the best doctors around your\n vicinity at total ease ",
       "image": "0.svg"
     },
     {
-      "titletext": "Schedule appointments\n with expert doctors",
+      "titletext": "Schedule appointments with expert doctors",
       "description":
-          "Find experienced specialist doctors with a\n good ratings and reviews and book you\n appointments hassle free.",
+          "Find experienced specialist doctors with a good ratings and reviews and book you\n appointments hassle free.",
       "image": "1.svg"
     },
     {
-      "titletext": "Find Help from our AI\n Assistant!",
+      "titletext": "Find Help from our AI Assistant!",
       "description":
-          "An AI assistant integrated into our app\n revolutionizes the patient experience by\n providing real-time support.",
+          "An AI assistant integrated into our app revolutionizes the patient experience by\n providing real-time support.",
       "image": "2.svg"
     },
   ];
@@ -53,118 +56,135 @@ class _IntoScreenState extends State<IntroScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: ui.backgroundclr,
-        body: Column(
-          children: [
+    final size = MediaQuery.of(context).size;
+    return SafeArea(
+      child: Scaffold(
+          backgroundColor: ui.backgroundclr,
+          body: Stack(children: [
             Container(
-              height: MediaQuery.of(context).size.height / 2,
-              color: Colors.lightBlueAccent,
+              color: ui.primaryclr,
               child: Column(
                 children: [
+                  SizedBox(
+                    height: 10,
+                  ),
                   Row(
                       mainAxisAlignment: index == 0
                           ? MainAxisAlignment.end
                           : MainAxisAlignment.spaceBetween,
-                      crossAxisAlignment: CrossAxisAlignment.end,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         if (index > 0)
-                          Padding(
-                            padding: const EdgeInsets.only(left: 10, top: 40),
-                            child: IconButton(
-                              icon: const Icon(Icons.arrow_back),
-                              iconSize: 24,
-                              onPressed: () {
-                                updatedecrementindex();
-                              },
-                            ),
+                          IconButton(
+                            icon: const Icon(Icons.arrow_back),
+                            iconSize: 26,
+                            onPressed: () {
+                              updatedecrementindex();
+                            },
                           ),
+                          SizedBox(height: 50,),
                         if (index < 2)
-                          Padding(
-                            padding: const EdgeInsets.only(top: 40, right: 10),
+                          InkWell(
+                            onTap: (){
+                              Navigator.pushReplacementNamed(context, 'signinscreen');
+                            },
                             child: Container(
+                                margin: EdgeInsets.only(right:15),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(20),
                                   color: Colors.white,
                                 ),
-                                width: 50,
+                                width: 60,
                                 height: 35,
                                 child: Center(
-                                  child: text(" SKIP ", Colors.lightBlueAccent,
+                                  child: text(" SKIP ", ui.blackclr,
                                       12.0, FontWeight.w500, FontStyle.normal),
                                 )),
                           ),
                       ]),
                   Container(
-                    height: MediaQuery.of(context).size.height / 3,
-                    child: SvgPicture.asset(
-                        "assets/images/${data[index]['image']}"),
+                    height: size.height / 3,
+                    child:
+                        SvgPicture.asset("assets/images/${data[index]['image']}"),
                   )
                 ],
               ),
             ),
-            Container(
-              decoration: const BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(20),
-                      topRight: Radius.circular(20))),
-              height: MediaQuery.of(context).size.height / 2,
-              width: MediaQuery.of(context).size.width,
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    text(
-                      data[index]['titletext']!,
-                      Colors.black,
-                      30,
-                      FontWeight.w500,
-                      FontStyle.normal,
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    text(
-                      data[index]['description']!,
-                      Colors.black26,
-                      15,
-                      FontWeight.w500,
-                      FontStyle.normal,
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    InkWell(
-                      onTap: () {
-                        if (index == 2) {
-                          Navigator.pushReplacementNamed(context, 'signinscreen');
-                        } else {
-                          updateincrementindex();
-                        }
-                      },
-                      child: Container(
-                        width: 265,
-                        height: 70,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.lightBlueAccent,
+            Column(
+              children: [
+                Expanded(child: Container()),
+                bottomdrawer(
+                  context: context,
+                  child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        text(
+                          data[index]['titletext']!,
+                          ui.blackclr,
+                          30,
+                          FontWeight.w500,
+                          FontStyle.normal,
                         ),
-                        child: Center(
-                          child: text(
-                            "NEXT",
-                            Colors.white,
-                            25,
-                            FontWeight.w500,
-                            FontStyle.normal,
-                          ),
+                        const SizedBox(
+                          height: 20,
                         ),
-                      ),
-                    )
-                  ]),
+                        text(
+                          data[index]['description']!,
+                          ui.greyclr,
+                          15,
+                          FontWeight.w500,
+                          FontStyle.normal,
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        btn(
+                          context:context,
+                          tex: 'NEXT',
+                          style: fontstyles().style,
+                          function: (){
+                            if (index == 2) {
+                              Navigator.pushReplacementNamed(context, 'signinscreen');
+                            } else {
+                              updateincrementindex();
+                              setState(() {
+                                
+                              });
+                            }
+                          }
+                        )
+                        // InkWell(
+                        //   onTap: () {
+                        //     if (index == 2) {
+                        //       Navigator.pushReplacementNamed(context, 'signinscreen');
+                        //     } else {
+                        //       updateincrementindex();
+                        //     }
+                        //   },
+                        //   child: Container(
+                        //     width: 265,
+                        //     height: 70,
+                        //     decoration: BoxDecoration(
+                        //       borderRadius: BorderRadius.circular(20),
+                        //       color: Colors.lightBlueAccent,
+                        //     ),
+                        //     child: Center(
+                        //       child: text(
+                        //         "NEXT",
+                        //         Colors.white,
+                        //         25,
+                        //         FontWeight.w500,
+                        //         FontStyle.normal,
+                        //       ),
+                        //     ),
+                        //   ),
+                        // )
+                      ]),
+                )
+              ],
             )
-          ],
-        )
-        );
+          ])),
+    );
   }
 }
