@@ -4,13 +4,11 @@ import 'package:meditransparency/utils/widgets/reusable_text.dart';
 
 Widget btn({tex, function, style, context}) {
   final style = ElevatedButton.styleFrom(
-      primary: ui.primaryclr, //background color of button
-      // side: BorderSide(width: 3, color: Colors.brown), //border width and color
-      elevation: 3, //elevation of button
+      primary: ui.primaryclr,
+      elevation: 3,
       shape: RoundedRectangleBorder(
-          //to set border radius to button
           borderRadius: BorderRadius.circular(20)),
-      padding: EdgeInsets.all(2) //content padding inside button
+      padding: EdgeInsets.all(2)
       );
   final size = MediaQuery.of(context).size;
   return Container(
@@ -20,10 +18,7 @@ Widget btn({tex, function, style, context}) {
       child: ElevatedButton(
         style: style,
         onPressed: function,
-        child: text(tex, ui.backgroundclr, 25.0, FontWeight.w500, FontStyle.normal),
+        child: text(tex, ui.backgroundclr, 25.0, FontWeight.w500),
       ));
 
 }
-//     ),
-//   );
-// }

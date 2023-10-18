@@ -98,7 +98,7 @@ class _IntoScreenState extends State<IntroScreen> {
                                 height: 35,
                                 child: Center(
                                   child: text(" SKIP ", ui.blackclr,
-                                      12.0, FontWeight.w500, FontStyle.normal),
+                                      12.0, FontWeight.w500),
                                 )),
                           ),
                       ]),
@@ -124,7 +124,6 @@ class _IntoScreenState extends State<IntroScreen> {
                           ui.blackclr,
                           30,
                           FontWeight.w500,
-                          FontStyle.normal,
                         ),
                         const SizedBox(
                           height: 20,
@@ -134,7 +133,6 @@ class _IntoScreenState extends State<IntroScreen> {
                           ui.greyclr,
                           15,
                           FontWeight.w500,
-                          FontStyle.normal,
                         ),
                         const SizedBox(
                           height: 20,
@@ -154,32 +152,6 @@ class _IntoScreenState extends State<IntroScreen> {
                             }
                           }
                         )
-                        // InkWell(
-                        //   onTap: () {
-                        //     if (index == 2) {
-                        //       Navigator.pushReplacementNamed(context, 'signinscreen');
-                        //     } else {
-                        //       updateincrementindex();
-                        //     }
-                        //   },
-                        //   child: Container(
-                        //     width: 265,
-                        //     height: 70,
-                        //     decoration: BoxDecoration(
-                        //       borderRadius: BorderRadius.circular(20),
-                        //       color: Colors.lightBlueAccent,
-                        //     ),
-                        //     child: Center(
-                        //       child: text(
-                        //         "NEXT",
-                        //         Colors.white,
-                        //         25,
-                        //         FontWeight.w500,
-                        //         FontStyle.normal,
-                        //       ),
-                        //     ),
-                        //   ),
-                        // )
                       ]),
                 )
               ],

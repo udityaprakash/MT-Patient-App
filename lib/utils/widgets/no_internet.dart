@@ -38,7 +38,7 @@ class _NoConnectionScreenState extends State<NoConnectionScreen> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   text("No Internet", Colors.lightBlueAccent,
-                                      22.0, FontWeight.w500, FontStyle.normal),
+                                      22.0, FontWeight.w500,),
                   // Text('No Internet', context),
                   SizedBox(
                     height: MediaQuery.of(context).size.height / 6,

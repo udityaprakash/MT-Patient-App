@@ -21,19 +21,18 @@ class _SignInScreenState extends State<SignInScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             text("Sign In", Colors.black, 25.0, FontWeight.w500,
-                FontStyle.normal),
+                ),
             text(
                 "Sign in using your phone number or by a given\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tsocial login",
                 Colors.black38,
                 15,
-                FontWeight.w500,
-                FontStyle.normal),
+                FontWeight.w500,),
             Padding(
               padding: const EdgeInsets.only(left: 35.0, top: 30),
               child: Row(
                 children: [
                   text("Phone number", Colors.black38, 15, FontWeight.w500,
-                      FontStyle.normal),
+                      ),
                 ],
               ),
             ),
@@ -53,7 +52,7 @@ class _SignInScreenState extends State<SignInScreen> {
               child: Row(
                 children: [
                   text("Password", Colors.black38, 15, FontWeight.w500,
-                      FontStyle.normal),
+                      ),
                 ],
               ),
             ),
@@ -75,7 +74,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   text("forget password", Colors.lightBlueAccent, 15,
-                      FontWeight.w500, FontStyle.normal)
+                      FontWeight.w500,)
                 ],
               ),
             ),
@@ -92,7 +91,7 @@ class _SignInScreenState extends State<SignInScreen> {
                 ),
                 child: Center(
                     child: text("Next", Colors.white, 20, FontWeight.w700,
-                        FontStyle.normal)),
+                        )),
               ),
             ),
             Padding(
@@ -136,10 +135,10 @@ class _SignInScreenState extends State<SignInScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   text("Don’t have an account? ", Colors.black, 12,
-                      FontWeight.w500, FontStyle.normal),
+                      FontWeight.w500,),
                   InkWell(
                     child: text("Sign Up", Colors.lightBlueAccent, 12,
-                        FontWeight.w500, FontStyle.normal),
+                        FontWeight.w500, ),
                     onTap: () {
                       Navigator.push(
                           context,

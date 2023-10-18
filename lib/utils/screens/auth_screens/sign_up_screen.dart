@@ -20,19 +20,17 @@ class _SignUpScreenState extends State<SignUpScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             text("Sign Up", Colors.black, 25.0, FontWeight.w500,
-                FontStyle.normal),
+                ),
             text(
                 "Sign in using your phone number or by a given\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tsocial login",
                 Colors.black38,
                 15,
-                FontWeight.w500,
-                FontStyle.normal),
+                FontWeight.w500,),
             Padding(
               padding: const EdgeInsets.only(left: 35.0, top: 25),
               child: Row(
                 children: [
-                  text("Phone number", Colors.black38, 15, FontWeight.w500,
-                      FontStyle.normal),
+                  text("Phone number", Colors.black38, 15, FontWeight.w500,),
                 ],
               ),
             ),
@@ -52,7 +50,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               child: Row(
                 children: [
                   text("Password", Colors.black38, 15, FontWeight.w500,
-                      FontStyle.normal),
+                      ),
                 ],
               ),
             ),
@@ -73,7 +71,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
               child: Row(
                 children: [
                   text("Confirm Password", Colors.black38, 15, FontWeight.w500,
-                      FontStyle.normal),
+                      ),
                 ],
               ),
             ),
@@ -95,7 +93,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   text("forget password", Colors.lightBlueAccent, 15,
-                      FontWeight.w500, FontStyle.normal)
+                      FontWeight.w500,)
                 ],
               ),
             ),
@@ -112,7 +110,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 child: Center(
                     child: text("Next", Colors.white, 20, FontWeight.w700,
-                        FontStyle.normal)),
+                        )),
               ),
             ),
             Padding(
@@ -156,10 +154,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   text("Have an account? ", Colors.black, 12, FontWeight.w500,
-                      FontStyle.normal),
+                      ),
                   InkWell(
                     child: text("Sign In", Colors.lightBlueAccent, 12,
-                        FontWeight.w500, FontStyle.normal),
+                        FontWeight.w500, ),
                     onTap: () {
                       Navigator.pop(context);
                     },
