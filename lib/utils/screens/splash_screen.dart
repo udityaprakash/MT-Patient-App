@@ -27,7 +27,7 @@ class _SplashScreenState extends State<SplashScreen> {
     return Scaffold(
       body: Center(
         child:SvgPicture.asset(
-          "assets/images/splashlogo.svg"
+          "assets/images/aplogo.svg"
           )
         )
       );

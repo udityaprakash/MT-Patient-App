@@ -21,19 +21,19 @@ class _IntoScreenState extends State<IntroScreen> {
     {
       "titletext": "Find the best doctors near you!",
       "description":
-          "With the help of our intelligent algorithms, now locate the best doctors around your\n vicinity at total ease ",
+          "With the help of our intelligent algorithms, now locate the best doctors around your vicinity at total ease ",
       "image": "0.svg"
     },
     {
       "titletext": "Schedule appointments with expert doctors",
       "description":
-          "Find experienced specialist doctors with a good ratings and reviews and book you\n appointments hassle free.",
+          "Find experienced specialist doctors with a good ratings and reviews and book you appointments hassle free.",
       "image": "1.svg"
     },
     {
       "titletext": "Find Help from our AI Assistant!",
       "description":
-          "An AI assistant integrated into our app revolutionizes the patient experience by\n providing real-time support.",
+          "An AI assistant integrated into our app revolutionizes the patient experience by providing real-time support.",
       "image": "2.svg"
     },
   ];
@@ -62,7 +62,7 @@ class _IntoScreenState extends State<IntroScreen> {
           backgroundColor: ui.backgroundclr,
           body: Stack(children: [
             Container(
-              color: ui.primaryclr,
+              color: ui.primarylightclr,
               child: Column(
                 children: [
                   SizedBox(

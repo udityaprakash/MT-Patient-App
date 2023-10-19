@@ -22,3 +22,24 @@ Widget btn({tex, function, style, context}) {
       ));
 
 }
+
+Widget nextorcontinuebtn({tex, function, style, context}) {
+  final style = ElevatedButton.styleFrom(
+      primary: ui.primaryclr,
+      elevation: 3,
+      shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(1400)),
+      padding: EdgeInsets.all(7)
+      );
+  final size = MediaQuery.of(context).size;
+  return Container(
+      margin: EdgeInsets.symmetric(horizontal: 20),
+      // height: 50,
+      width: size.width,
+      child: ElevatedButton(
+        style: style,
+        onPressed: function,
+        child: text(tex, ui.backgroundclr, 25.0, FontWeight.w500),
+      ));
+
+}

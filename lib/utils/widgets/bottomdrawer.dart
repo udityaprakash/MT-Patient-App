@@ -5,7 +5,7 @@ Widget bottomdrawer({child, context}) {
   final size = MediaQuery.of(context).size;
   return Container(
     child: child,
-    padding: EdgeInsets.all(15),
+    padding: EdgeInsets.all(25),
     width: size.width,
     height: size.height * 0.45,
     decoration:BoxDecoration(
